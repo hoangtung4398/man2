@@ -1,0 +1,15 @@
+.border{
+    border: 1.5px rgb(221,221,221) black;
+    border-radius: 0px !important;; 
+}
+.checkbox input:checked {
+    border-color: gray;
+    background-color: rgb(96,96,96);
+}
+.custom-bg{
+    background: rgb(247,247,247);
+}
+.custom-submit{
+    margin-top: 10px;
+    width: 15%;
+}
