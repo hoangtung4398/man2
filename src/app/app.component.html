@@ -1,7 +1,7 @@
 <div class="container custom-background ">
-  <button class="m-4 btn btn-lg bg-body-secondary text-dark border-1 rounded-0 border-dark">Click me</button>
+  <button (click)="clicked()" class="m-4 btn btn-lg bg-body-secondary text-dark border-1 rounded-0 border-dark">Click me</button>
   <div class="bg-white p-3">
-    <app-fillter></app-fillter>
+    <app-fillter (fillterData)="getDataFillter($event)"></app-fillter>
     <app-table></app-table>
   </div>
 </div>

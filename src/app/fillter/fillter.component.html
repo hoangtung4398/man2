@@ -1,17 +1,17 @@
 <!-- FILEPATH: /D:/Project/man2/src/app/fillter/fillter.component.html -->
 <div class="custom-bg p-3">
-    <form>
+    <form [formGroup]="fillerForm" (ngSubmit)="submitform()">
         <label class="m-2" for="">Fillter</label><br>
-        <div class="w-50 d-flex align-items-center text-start btn bg-white  border-white border-1.5 rounded-0 shadow-sm" type="button"
-            data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="true"
-            aria-controls="collapseExample">
-            <span class="align-self-center">Click me</span>
-        </div>
+        <select [(ngModel)]="fillter.department" formControlName=department class="form-select w-50 custom-btn"
+            aria-label="Default select example">
+            <option *ngFor="let department of arrDepartment">{{department}}</option>
+
+        </select>
 
         <div class="collapse" id="collapseExample">
             <div class="card-body">
                 <div class="form-check checkbox">
-                    <input class="form-check-input rounded-0" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input  " type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Default checkbox
                     </label>
@@ -19,11 +19,12 @@
             </div>
         </div>
         <label class="m-2" for="">Fillter</label><br>
-        <input class="w-50 btn bg-white text-start border-white border-1.5 rounded-0 shadow-sm " type="text">
+        <input [(ngModel)]="fillter.name" formControlName=name
+            class="w-50 btn bg-white text-start border-white border-1.5 shadow-sm custom-btn" type="text">
         <br>
 
         <label class="m-2" for="">Fillter</label><br>
-        <div class="w-50 d-flex text-start btn bg-white  border-white border-1.5 rounded-0 shadow-sm" type="button"
+        <!-- <div class="w-50 d-flex text-start btn bg-white  border-white border-1.5   shadow-sm" type="button"
              data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="true"
             aria-controls="collapseExample1">
             <span class="align-self-center">Click me</span>
@@ -31,15 +32,40 @@
 
         <div class="collapse" id="collapseExample1">
             <div class="card-body w-50 bg-white p-2">
-                <div class="form-check checkbox ">
-                    <input style="width: 20px;height: 20px;" class="form-check-input rounded-0" type="checkbox" value=""
-                        id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Default checkbox1
+                <div class="form-check checkbox" *ngFor="let company of listCompany">
+                    <input  style="width: 20px;height: 20px;" class="form-check-input  " type="checkbox" value=""
+                        id="{{company}}"
+                        (change)="toggleAdd($event)">
+                    <label class="form-check-label" for="{{company}}">
+                        {{company}}
                     </label>
                 </div>
             </div>
+        </div> -->
+        <div class="dropdown">
+            <button class="btn w-50 bg-white text-start shadow-sm d-flex btn-lg custom-btn" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="w-100">
+                    <div *ngFor="let company of fillter.listCompany" type="btn" class="bg-body-secondary btn m-1">
+                        {{company}}
+                        <span><i class="bi bi-x"></i></span>
+                    </div>
+                </div>
+                <i class="bi bi-chevron-down text-end "></i>
+            </button>
+            <ul class="dropdown-menu w-50">
+                <li>
+                    <div class="form-check checkbox" *ngFor="let company of listCompany">
+                        <input style="width: 20px;height: 20px;" class="form-check-input  " type="checkbox" value=""
+                            id="{{company}}" (change)="toggleAdd($event)">
+                        <label class="form-check-label" for="{{company}}">
+                            {{company}}
+                        </label>
+                    </div>
+                </li>
+
+            </ul>
         </div>
-        <button class="btn border-dark rounded-0 custom-submit ">click me2</button>
+        <button type="submit" class="btn border-dark custom-submit ">Search</button>
     </form>
 </div>

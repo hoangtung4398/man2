@@ -13,3 +13,9 @@
     margin-top: 10px;
     width: 15%;
 }
+select option{
+    margin: 10px !important;
+}
+.custom-btn{
+    min-height: 50px;
+}

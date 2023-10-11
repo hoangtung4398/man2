@@ -5,12 +5,23 @@
           <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
         </a>
       </li>
-      <li class="page-item"><a class="page-link border-0 rounded-circle bg-secondary text-white m-1" href="#">1</a></li>
-      <li class="page-item d-flex align-items-center"><a class="page-link border-0 text-secondary" href="#">2</a></li>
-      <li class="page-item d-flex align-items-center"><a class="page-link border-0 text-secondary" href="#">3</a></li>
+      <li class="page-item"><a (click)="isSelected(1)"
+        class="m-1"
+         [ngClass]="idSelected == 1 ? 'page-link border-0 rounded-circle bg-secondary text-white m-1' : 'page-link border-0 rounded-circle text-secondary'"
+          href="#">1</a></li>
+      <li class="page-item d-flex align-items-center"><a 
+        (click)="isSelected(2)" 
+        class="m-1"
+        [ngClass]="idSelected == 2 ? 'page-link border-0 rounded-circle bg-secondary text-white m-1' : 'page-link border-0 rounded-circle text-secondary'"
+        href="#">2</a></li>
+      <li class="page-item d-flex align-items-center"><a 
+        (click)="isSelected(3)" 
+        class="m-1"
+        [ngClass]="idSelected == 3 ? 'page-link border-0 rounded-circle bg-secondary text-white m-1' : 'page-link border-0 rounded-circle text-secondary'"
+        href="#">3</a></li>
       <li class="page-item d-flex align-items-center">
         <a class="page-link border-0" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
+          <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
         </a>
       </li>
     </ul>
@@ -18,27 +29,20 @@
 <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-        <th scope="col">Handle</th>
+        <th class="text-center" scope="">Name</th>
+        <th class="text-center" scope="col">Company</th>
+        <th class="text-center" scope="col">Area</th>
+        <th class="text-center" scope="col">ID</th>
+        <th class="text-center" scope="col">Department</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <th scope="row">1</th>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <th scope="row">1</th>
+      <tr *ngFor="let employee of dataEmployee">
+        <td class="custom-th" >{{employee.name}}</td>
+        <td class="custom-th">{{employee.nameCompany}}</td>
+        <td class="custom-th">{{employee.area}}</td>
+        <td class="custom-th">{{employee.id}}</td>
+        <td class="custom-th" ></td>
       </tr>
     </tbody>
   </table>
