@@ -29,20 +29,20 @@
 <table class="table table-bordered">
     <thead>
       <tr>
-        <th class="text-center" scope="">Name</th>
-        <th class="text-center" scope="col">Company</th>
-        <th class="text-center" scope="col">Area</th>
-        <th class="text-center" scope="col">ID</th>
-        <th class="text-center" scope="col">Department</th>
+        <th class="text-center align-middle" scope="">Name</th>
+        <th class="text-center align-middle" scope="col">Company</th>
+        <th class="text-center align-middle" scope="col">Area</th>
+        <th class="text-center align-middle" scope="col">ID</th>
+        <th class="text-center align-middle" scope="col">Department</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let employee of dataEmployee">
-        <td class="custom-th" >{{employee.name}}</td>
-        <td class="custom-th">{{employee.nameCompany}}</td>
-        <td class="custom-th">{{employee.area}}</td>
-        <td class="custom-th">{{employee.id}}</td>
-        <td class="custom-th" ></td>
+        <td class="custom-th align-middle" >{{employee.name}}</td>
+        <td class="custom-th align-middle">{{employee.nameCompany}}</td>
+        <td class="custom-th align-middle">{{employee.area}}</td>
+        <td class="custom-th align-middle">{{employee.id}}</td>
+        <td class="custom-th align-middle" ></td>
       </tr>
     </tbody>
   </table>

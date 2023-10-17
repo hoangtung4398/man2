@@ -42,6 +42,7 @@ export class FillterComponent {
   }
   toggleAdd(e: any) {
     if (e.target.checked) {
+      console.log(e)
       this.fillter.listCompany.push(e.target.labels[0].textContent)
     }
     if (e.target.checked == false) {

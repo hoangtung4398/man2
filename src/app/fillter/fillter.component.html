@@ -46,7 +46,7 @@
             <button class="btn w-50 bg-white text-start shadow-sm d-flex btn-lg custom-btn" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <div class="w-100">
-                    <div *ngFor="let company of fillter.listCompany" type="btn" class="bg-body-secondary btn m-1">
+                    <div *ngFor="let company of fillter.listCompany," type="btn" class="bg-body-secondary btn m-1">
                         {{company}}
                         <span><i class="bi bi-x"></i></span>
                     </div>
@@ -55,10 +55,10 @@
             </button>
             <ul class="dropdown-menu w-50">
                 <li>
-                    <div class="form-check checkbox" *ngFor="let company of listCompany">
+                    <div class="form-check checkbox" *ngFor="let company of listCompany,index as i">
                         <input style="width: 20px;height: 20px;" class="form-check-input  " type="checkbox" value=""
-                            id="{{company}}" (change)="toggleAdd($event)">
-                        <label class="form-check-label" for="{{company}}">
+                            id=`C{{i}}` (change)="toggleAdd($event)">
+                        <label class="form-check-label" for=`C{{i}}`>
                             {{company}}
                         </label>
                     </div>
